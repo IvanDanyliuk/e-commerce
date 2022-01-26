@@ -1,8 +1,13 @@
 import React from 'react';
+import Announcements from '../components/Announcements';
+import Navbar from '../components/Navbar';
 
 const Home = () => {
   return (
-    <div>Homepage</div>
+    <div>
+      <Announcements />
+      <Navbar />
+    </div>
   );
 };
 
