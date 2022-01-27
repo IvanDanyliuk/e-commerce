@@ -39,12 +39,12 @@ const Button = styled.button`
   color: #808080;
 `;
 
-const CategoryItem = ({ item }) => {
+const CategoryItem = ({ categoryData }) => {
   return (
     <Container>
-      <Image src={item.img} />
+      <Image src={categoryData.img} />
       <Info>
-        <Title>{item.title}</Title>
+        <Title>{categoryData.title}</Title>
         <Button>SHOP NOW</Button>
       </Info>
     </Container>
