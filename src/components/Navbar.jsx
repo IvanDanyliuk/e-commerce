@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   height: 60px;
-  background-color: orange;
+  background-color: #ffffff;
 `;
 
 const Wrapper = styled.div`
@@ -44,7 +44,7 @@ const Center = styled.div`
   text-align: center;
 `;
 
-const Logo = styled.h1`
+const Logo = styled.h2`
   font-weight: bold;
 `;
 
