@@ -1,8 +1,10 @@
-import { Facebook, Instagram, Pinterest, Twitter, Room, Phone, MailOutline } from "@mui/icons-material";
 import styled from "styled-components";
+import { Facebook, Instagram, Pinterest, Twitter, Room, Phone, MailOutline } from "@mui/icons-material";
+import { mobile } from '../responsive';
 
 const Container = styled.div`
   display: flex;
+  ${mobile({ flexDirection: 'column' })};
 `;
 
 const Left = styled.div`
@@ -18,7 +20,6 @@ const Logo = styled.h2`
 
 const Description = styled.p`
   margin: 20px 0px;
-
 `;
 
 const SocialContainer = styled.div`
@@ -40,6 +41,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   padding: 20px;
   flex: 1;
+  ${mobile({ display: 'none' })};
 `;
 
 const Title = styled.div`
@@ -62,6 +64,7 @@ const ListItem = styled.li`
 const Right = styled.div`
   padding: 20px;
   flex: 1;
+  ${mobile({ backgroundColor: '#fff8f8' })};
 `;
 
 const ContactItem = styled.div`
