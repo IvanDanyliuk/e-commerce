@@ -27,16 +27,19 @@ export const categories = [
     id: 1,
     img: 'https://images.pexels.com/photos/1852382/pexels-photo-1852382.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     title: 'SHIRT STYLE',
+    category: 'women'
   },
   {
     id: 2,
     img: 'https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     title: 'LOUNGEWEAR LOVE',
+    category: 'coat'
   },
   {
     id: 3,
     img: 'https://images.pexels.com/photos/2229490/pexels-photo-2229490.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-    title: 'LOUNGEWEAR LOVE',
+    title: 'LIGHT JACKETS',
+    category: 'jeans'
   }
 ];
 
