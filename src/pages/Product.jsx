@@ -9,7 +9,7 @@ import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
 import { mobile } from '../responsive';
 import { publicRequest } from '../requestMethods';
-import { addProduct } from '../redux/cartRedux';
+import { addProduct } from '../redux/cartSlice';
 
 const Container = styled.div`
 
