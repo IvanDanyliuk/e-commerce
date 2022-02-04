@@ -1,16 +1,9 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import Announcements from "../components/Announcements";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import Newsletter from "../components/Newsletter";
+import Layout from "../components/Layout";
 import Products from "../components/Products";
 import { mobile } from "../responsive";
-
-const Container = styled.div`
-
-`;
 
 const Title = styled.h2`
   margin: 20px;
@@ -63,9 +56,7 @@ const ProductList = () => {
   };
 
   return (
-    <Container>
-      <Navbar />
-      <Announcements />
+    <Layout>
       <Title>{category}</Title>
       <FilterContainer>
         <Filter>
@@ -102,9 +93,7 @@ const ProductList = () => {
         filters={filters} 
         sort={sort} 
       />
-      <Newsletter />
-      <Footer />
-    </Container>
+    </Layout>
   );
 };
 

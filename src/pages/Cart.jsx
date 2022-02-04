@@ -2,20 +2,13 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import StripeCheckout from 'react-stripe-checkout';
-import Navbar from '../components/Navbar';
-import Announcements from '../components/Announcements';
-import Footer from '../components/Footer';
 import { Add, Remove } from '@mui/icons-material';
 import { mobile } from '../responsive';
 import { useEffect, useState } from 'react';
 import { userRequest } from '../requestMethods';
+import Layout from '../components/Layout';
 
 const KEY = process.env.REACT_APP_STRIPE;
-
-
-const Container = styled.div`
-
-`;
 
 const Wrapper = styled.div`
   padding: 20px;
@@ -156,13 +149,9 @@ const SummaryItem = styled.div`
   font-weight: ${props => props.type === 'total' && '500'};
 `;
 
-const SummaryItemText = styled.span`
+const SummaryItemText = styled.span``;
 
-`;
-
-const SummaryItemPrice = styled.span`
-
-`;
+const SummaryItemPrice = styled.span``;
 
 const Button = styled.button`
   padding: 10px;
@@ -199,9 +188,7 @@ const Cart = () => {
   }, [stripeToken, cart.total, navigate]);
 
   return (
-    <Container>
-      <Navbar />
-      <Announcements />
+    <Layout>
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
@@ -272,8 +259,7 @@ const Cart = () => {
           </Summary>
         </Bottom>
       </Wrapper>
-      <Footer />
-    </Container>
+    </Layout>
   );
 };
 
