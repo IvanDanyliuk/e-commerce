@@ -1,6 +1,7 @@
 import { FavoriteBorder, SearchOutlined, ShoppingCartOutlined } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { mobile } from '../responsive';
 
 const Info = styled.div`
   position: absolute;
@@ -43,7 +44,8 @@ const Circle = styled.div`
 `;
 
 const Image = styled.img`
-  width: 75%;
+  height: 75%;
+  object-fit: cover;
   z-index: 2;
 `;
 
@@ -72,7 +74,9 @@ const Product = ({ productData }) => {
       <Image src={productData.img} />
       <Info>
         <Icon>
-          <ShoppingCartOutlined />
+          <Link to={`/product/${productData._id}`}>
+            <ShoppingCartOutlined />
+          </Link>
         </Icon>
         <Icon>
           <Link to={`/product/${productData._id}`}>

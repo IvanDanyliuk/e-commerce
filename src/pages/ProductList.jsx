@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Layout from "../components/Layout";
@@ -46,6 +46,11 @@ const ProductList = () => {
 
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState('newest');
+  const [colors, setColors] = useState([]);
+
+  const callback = useCallback((data) => {
+    setColors(data);
+  }, []);
 
   const handleFilters = (e) => {
     const value = e.target.value;
@@ -61,22 +66,19 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
+          <Select name='categories' onClick={handleFilters}>
+            <Option disabled>Size</Option>
+            <Option>tshirts</Option>
+            <Option>pants</Option>
+            <Option>jeans</Option>
+            <Option>hoodie</Option>
+            <Option>shoes</Option>
+          </Select>
           <Select name='color' onClick={handleFilters}>
             <Option disabled>Color</Option>
-            <Option>white</Option>
-            <Option>black</Option>
-            <Option>red</Option>
-            <Option>blue</Option>
-            <Option>yellow</Option>
-            <Option>green</Option>
-          </Select>
-          <Select name='size' onClick={handleFilters}>
-            <Option disabled>Size</Option>
-            <Option>XS</Option>
-            <Option>S</Option>
-            <Option>M</Option>
-            <Option>L</Option>
-            <Option>XL</Option>
+            {colors.map(color => (
+              <Option key={color}>{color}</Option>
+            ))}
           </Select>
         </Filter>
         <Filter>
@@ -92,6 +94,7 @@ const ProductList = () => {
         category={category} 
         filters={filters} 
         sort={sort} 
+        getColors={callback}
       />
     </Layout>
   );

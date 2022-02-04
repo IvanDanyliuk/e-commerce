@@ -26,54 +26,21 @@ export const categories = [
   {
     id: 1,
     img: 'https://images.pexels.com/photos/1852382/pexels-photo-1852382.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-    title: 'SHIRT STYLE',
+    title: 'WOMEN',
     category: 'women'
   },
   {
     id: 2,
     img: 'https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-    title: 'LOUNGEWEAR LOVE',
-    category: 'coat'
+    title: 'MEN',
+    category: 'men'
   },
   {
     id: 3,
-    img: 'https://images.pexels.com/photos/2229490/pexels-photo-2229490.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-    title: 'LIGHT JACKETS',
-    category: 'jeans'
+    img: 'https://images.pexels.com/photos/35188/child-childrens-baby-children-s.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+    title: 'KIDS',
+    category: 'kids'
   }
 ];
 
-export const popularProducts = [
-  {
-    id: 1,
-    img: 'https://images.pexels.com/photos/6311652/pexels-photo-6311652.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
-  },
-  {
-    id: 2,
-    img: 'https://images.pexels.com/photos/6311599/pexels-photo-6311599.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
-  },
-  {
-    id: 3,
-    img: 'https://images.pexels.com/photos/5709908/pexels-photo-5709908.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
-  },
-  {
-    id: 4,
-    img: 'https://images.pexels.com/photos/1084652/pexels-photo-1084652.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
-  },
-  {
-    id: 5,
-    img: 'https://images.pexels.com/photos/769730/pexels-photo-769730.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
-  },
-  {
-    id: 6,
-    img: 'https://images.pexels.com/photos/970374/pexels-photo-970374.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
-  },
-  {
-    id: 7,
-    img: 'https://images.pexels.com/photos/1139247/pexels-photo-1139247.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
-  },
-  {
-    id: 8,
-    img: 'https://images.pexels.com/photos/3206114/pexels-photo-3206114.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-  }
-]
+
