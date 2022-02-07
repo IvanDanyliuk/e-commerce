@@ -60,6 +60,10 @@ const ProductList = () => {
     });
   };
 
+  useEffect(() => {
+    setFilters({});
+  }, [category])
+
   return (
     <Layout>
       <Title>{category}</Title>

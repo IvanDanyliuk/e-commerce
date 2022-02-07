@@ -70,7 +70,7 @@ const Menu = ({ toggleMenu }) => {
     {type: 'item', to: '/products', title: 'Products'},
     {type: 'subItem', to: '/products/women', title: 'Women'},
     {type: 'subItem', to: '/products/men', title: 'Men'},
-    {type: 'subItem', to: '/products/kid', title: 'Kids'},
+    {type: 'subItem', to: '/products/kids', title: 'Kids'},
     {type: 'item', to: '/register', title: 'Register'},
     {type: 'item', to: '/login', title: 'Login'},
   ]
