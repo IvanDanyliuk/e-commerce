@@ -55,12 +55,7 @@ const Delete = styled.button`
   cursor: pointer;
 `;
 
-const ProductItem = ({ data }) => {
-  const handleDeleteProduct = e => {
-    e.preventDefault();
-
-  }
-
+const ProductItem = ({ data, onDelete }) => {
   return (
     <Container>
       <Image src={data.img} />
@@ -68,7 +63,7 @@ const ProductItem = ({ data }) => {
       <Price>{data.price}</Price>
       <ActionButtons>
         <Edit to='/'>Edit</Edit>
-        <Delete onClick={handleDeleteProduct}>
+        <Delete onClick={onDelete}>
           <DeleteOutlineIcon />
         </Delete>
       </ActionButtons>

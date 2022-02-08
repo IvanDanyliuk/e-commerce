@@ -1,7 +1,9 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
 import styled from 'styled-components';
 import ProductItem from '../../components/Admin/ProductItem';
+import { getProducts, deleteProduct } from '../../redux/apiCalls';
 
 const Wrapper = styled.div`
 
@@ -18,28 +20,23 @@ const ProductsList = styled.ul`
 `;
 
 const AdminProducts = () => {
-  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
+  const products = useSelector(state => state.products.products.products);
 
   useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/api/products');
-        setProducts(response.data.products);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getProducts();
-  }, []);
+    getProducts(dispatch);
+  }, [dispatch, products]);
 
-  console.log(products)
+  const handleProductDelete = id => {
+    deleteProduct(id, dispatch);
+  }
 
   return (
     <Wrapper>
       <Title>Products</Title>
       <ProductsList>
         {products.map(product => (
-          <ProductItem key={product._id} data={product} />
+          <ProductItem key={product._id} data={product} onDelete={() => handleProductDelete(product._id)} />
         ))}
       </ProductsList>
     </Wrapper>
