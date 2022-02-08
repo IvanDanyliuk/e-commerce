@@ -34,7 +34,7 @@ const App = () => {
         <Route path='/register' element={user ? <Navigate to='/' /> : <Register />} />
         <Route path='/admin' element={<Admin />}>
           <Route index element={<AdminDashboard />} />
-          <Route path='dashboard' element={<AdminDashboard />} />
+          <Route path='analytics' element={<AdminDashboard />} />
           <Route path='users' element={<AdminUsers />} />
           <Route path='products' element={<AdminProducts />} />
           <Route path='newproduct' element={<AdminNewProduct />} />

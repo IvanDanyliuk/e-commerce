@@ -55,7 +55,7 @@ const AdminMenuLink = styled(NavLink)`
 
 const Admin = () => {
   const adminPanelRoutes = [
-    {path: 'dashboard', title: 'Dashboard', icon: <DashboardOutlinedIcon />},
+    {path: 'analytics', title: 'Analytics', icon: <DashboardOutlinedIcon />},
     {path: 'users', title: 'Users', icon: <PeopleOutlinedIcon />},
     {path: 'products', title: 'Products', icon: <CardGiftcardOutlinedIcon />},
     {path: 'newproduct', title: 'New product', icon: <AddCircleOutlineOutlinedIcon />},
