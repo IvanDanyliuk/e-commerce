@@ -1,19 +1,12 @@
-import { Add, Remove } from '@mui/icons-material';
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Add, Remove } from '@mui/icons-material';
 import styled from 'styled-components';
-import Announcements from '../components/Announcements';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import Newsletter from '../components/Newsletter';
 import { mobile } from '../responsive';
 import { publicRequest } from '../requestMethods';
 import { addProduct } from '../redux/cartSlice';
-
-const Container = styled.div`
-
-`;
+import Layout from '../components/Layout';
 
 const Wrapper = styled.div`
   padding: 50px;
@@ -78,6 +71,7 @@ const FilterColor = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  border: 1px solid #000000;
   background-color: ${props => props.color};
   cursor: pointer;
 `;
@@ -162,9 +156,7 @@ const Product = () => {
   }
 
   return (
-    <Container>
-      <Navbar />
-      <Announcements />
+    <Layout>
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
@@ -202,9 +194,7 @@ const Product = () => {
           </AddContainer>
         </InfoContainer>
       </Wrapper>
-      <Newsletter />
-      <Footer />
-    </Container>
+    </Layout>
   );
 };
 

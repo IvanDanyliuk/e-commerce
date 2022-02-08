@@ -1,16 +1,9 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import Announcements from "../components/Announcements";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import Newsletter from "../components/Newsletter";
+import Layout from "../components/Layout";
 import Products from "../components/Products";
 import { mobile } from "../responsive";
-
-const Container = styled.div`
-
-`;
 
 const Title = styled.h2`
   margin: 20px;
@@ -53,6 +46,11 @@ const ProductList = () => {
 
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState('newest');
+  const [colors, setColors] = useState([]);
+
+  const callback = useCallback((data) => {
+    setColors(data);
+  }, []);
 
   const handleFilters = (e) => {
     const value = e.target.value;
@@ -62,30 +60,29 @@ const ProductList = () => {
     });
   };
 
+  useEffect(() => {
+    setFilters({});
+  }, [category])
+
   return (
-    <Container>
-      <Navbar />
-      <Announcements />
+    <Layout>
       <Title>{category}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
+          <Select name='categories' onClick={handleFilters}>
+            <Option disabled>Size</Option>
+            <Option>tshirts</Option>
+            <Option>pants</Option>
+            <Option>jeans</Option>
+            <Option>hoodie</Option>
+            <Option>shoes</Option>
+          </Select>
           <Select name='color' onClick={handleFilters}>
             <Option disabled>Color</Option>
-            <Option>white</Option>
-            <Option>black</Option>
-            <Option>red</Option>
-            <Option>blue</Option>
-            <Option>yellow</Option>
-            <Option>green</Option>
-          </Select>
-          <Select name='size' onClick={handleFilters}>
-            <Option disabled>Size</Option>
-            <Option>XS</Option>
-            <Option>S</Option>
-            <Option>M</Option>
-            <Option>L</Option>
-            <Option>XL</Option>
+            {colors.map(color => (
+              <Option key={color}>{color}</Option>
+            ))}
           </Select>
         </Filter>
         <Filter>
@@ -101,10 +98,9 @@ const ProductList = () => {
         category={category} 
         filters={filters} 
         sort={sort} 
+        getColors={callback}
       />
-      <Newsletter />
-      <Footer />
-    </Container>
+    </Layout>
   );
 };
 

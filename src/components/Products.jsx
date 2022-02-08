@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from 'axios';
-import { popularProducts } from '../data';
 import Product from "./Product";
 
 const Container = styled.div`
@@ -11,8 +10,9 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const Products = ({ category, filters, sort }) => {
+const Products = ({ category, filters, sort, getColors }) => {
   const [products, setProducts] = useState([]);
+  const [colors, setColors] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
@@ -23,19 +23,24 @@ const Products = ({ category, filters, sort }) => {
             ? `http://localhost:5000/api/products?category=${category}` 
             : 'http://localhost:5000/api/products'
         );
-        setProducts(response.data);
+        setProducts(response.data.products);
+        setColors(response.data.colors);
       } catch (error) {
-        
+        console.log(error);
       }
     };
     getProducts();
   }, [category]);
 
   useEffect(() => {
+    getColors && getColors(colors);
+  }, [category, colors]);
+
+  useEffect(() => {
     category && setFilteredProducts(
       products.filter(item => Object.entries(filters).every(([key, value]) => item[key].includes(value)))
     );
-  }, [products, category, filters]);
+  }, [products, category, filters, colors]);
 
   useEffect(() => {
     if(sort === 'newest') {

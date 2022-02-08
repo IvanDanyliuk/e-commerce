@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import { login } from '../redux/apiCalls';
 import { mobile } from '../responsive';
@@ -69,10 +70,12 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
+  const navigate = useNavigate();
 
   const handleLoginClick = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
+    navigate('/');
   }
 
   return (

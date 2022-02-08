@@ -1,23 +1,16 @@
 import React from 'react';
-import Announcements from '../components/Announcements';
 import Categories from '../components/Categories';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import Newsletter from '../components/Newsletter';
+import Layout from '../components/Layout';
 import Products from '../components/Products';
 import Slider from '../components/Slider';
 
 const Home = () => {
   return (
-    <div>
-      <Announcements />
-      <Navbar />
+    <Layout>
       <Slider />
       <Categories />
-      <Products />
-      <Newsletter />
-      <Footer />
-    </div>
+      <Products productsToShow={4} />
+    </Layout>
   );
 };
 
