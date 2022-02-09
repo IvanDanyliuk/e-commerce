@@ -40,16 +40,14 @@ const WidgetLarge = () => {
     getOrders();
   }, []);
 
-  console.log(orders)
-
   return (
     <Container>
       <Title>Latest Transactions</Title>
       <Table>
         <Row>
           <HeadingCell>Customer</HeadingCell>
-          <HeadingCell>Customer</HeadingCell>
-          <HeadingCell>Customer</HeadingCell>
+          <HeadingCell>Period</HeadingCell>
+          <HeadingCell>Amount</HeadingCell>
           <HeadingCell>Status</HeadingCell>
         </Row>
         {orders.map(order => (

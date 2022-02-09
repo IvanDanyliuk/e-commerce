@@ -2,6 +2,12 @@ import {
   loginFailure, 
   loginStart, 
   loginSuccess, 
+  getAllUsersStart, 
+  getAllUsersSuccess, 
+  getAllUsersFailure, 
+  deleteUserStart, 
+  deleteUserSuccess, 
+  deleteUserFailure,  
 } from "./userSlice";
 import {
   getProductsStart, 
@@ -25,6 +31,26 @@ export const login = async (dispatch, user) => {
     dispatch(loginSuccess(res.data));
   } catch (error) {
     dispatch(loginFailure());
+  }
+};
+
+export const getUsers = async (dispatch) => {
+  dispatch(getAllUsersStart());
+  try {
+    const res = await userRequest.get('/users');
+    dispatch(getAllUsersSuccess(res.data));
+  } catch (error) {
+    dispatch(getAllUsersFailure());
+  }
+};
+
+export const deleteUser = async (id, dispatch) => {
+  dispatch(deleteUserStart());
+  try {
+    await userRequest.delete(`/users/${id}`);
+    dispatch(deleteUserSuccess(id));
+  } catch (err) {
+    dispatch(deleteUserFailure());
   }
 };
 
