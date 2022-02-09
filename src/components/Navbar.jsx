@@ -55,10 +55,15 @@ const Right = styled.div`
   })};
 `;
 
+const NavbarLink = styled(Link)`
+  text-decoration: none;
+`;
+
 const MenuItem = styled.div`
   margin-left: 25px;
   cursor: pointer;
   font-size: 14px;
+  color: #000000;
   ${mobile({ 
     marginLeft: '10px', 
     fontSize: '12px' 
@@ -103,15 +108,19 @@ const Navbar = () => {
           <Logo>ESTORE.</Logo>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
-          <Link to={'/cart'}>
+          <NavbarLink to='/register'>
+            <MenuItem>REGISTER</MenuItem>
+          </NavbarLink>
+          <NavbarLink to='/login'>
+            <MenuItem>SIGN IN</MenuItem>
+          </NavbarLink>
+          <NavbarLink to={'/cart'}>
             <MenuItem>
               <Badge badgeContent={quantity} color='primary'>
                 <ShoppingCartOutlined />
               </Badge>
             </MenuItem>
-          </Link>
+          </NavbarLink>
         </Right>
       </Wrapper>
     </Container>
