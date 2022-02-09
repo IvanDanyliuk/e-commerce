@@ -75,12 +75,12 @@ const Register = () => {
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
         <Form>
-          <Input name='firstName' placeholder='first name' onChange={handleInputChange} />
-          <Input name='lastName' placeholder='last name' onChange={handleInputChange} />
-          <Input name='username' placeholder='user name' onChange={handleInputChange} />
-          <Input name='email' placeholder='email' onChange={handleInputChange} />
-          <Input name='password' placeholder='password' onChange={handleInputChange} />
-          <Input name='confirmPassword' placeholder='confirm password' onChange={handleInputChange} />
+          <Input name='firstName' type='text' placeholder='first name' onChange={handleInputChange} />
+          <Input name='lastName' type='text' placeholder='last name' onChange={handleInputChange} />
+          <Input name='username' type='text' placeholder='user name' onChange={handleInputChange} />
+          <Input name='email' type='text' placeholder='email' onChange={handleInputChange} />
+          <Input name='password' type='password' placeholder='password' onChange={handleInputChange} />
+          <Input name='confirmPassword' type='password' placeholder='confirm password' onChange={handleInputChange} />
           <Agreement>
             By creating an account, I consent to the processing of my 
             personal data in accordance with the <b>PRIVACY POLICE</b>
