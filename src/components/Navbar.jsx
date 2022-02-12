@@ -89,14 +89,6 @@ const Navbar = () => {
   const quantity = useSelector(state => state.cart.quantity);
   const currentUser = useSelector(state => state.user.currentUser);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    // const currentUser = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user.currentUser);
-    // console.log(currentUser)
-  }, []);
-
-  console.log(currentUser)
 
   return (
     <Container>
