@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Facebook, Instagram, Pinterest, Twitter, Room, Phone, MailOutline } from "@mui/icons-material";
 import { mobile } from '../responsive';
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -105,14 +106,30 @@ const Footer = () => {
       <Center>
         <Title>Useful Links</Title>
         <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>Man Fashion</ListItem>
-          <ListItem>Woman Fashion</ListItem>
-          <ListItem>Accessories</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Terms</ListItem>
+          <ListItem>
+            <Link to='/'>Home</Link>
+          </ListItem>
+          <ListItem>
+            <Link to='/cart'>Cart</Link>
+          </ListItem>
+          <ListItem>
+            <Link to='/products/men'>Man Fashion</Link>
+          </ListItem>
+          <ListItem>
+            <Link to='/products/women'>Woman Fashion</Link>
+          </ListItem>
+          <ListItem>
+            <Link to='/products/kids'>Kids</Link>
+          </ListItem>
+          <ListItem>
+            <Link to='/'>My Account</Link>
+          </ListItem>
+          <ListItem>
+            <Link to='/'>Wishlist</Link>
+          </ListItem>
+          <ListItem>
+            <Link to='/'>Terms</Link>
+          </ListItem>
         </List>
       </Center>
       <Right>
