@@ -82,7 +82,7 @@ const Menu = ({ toggleMenu }) => {
       <MenuContainer>
         <Navigation>
           {menuData.map(menuItem => (
-            <NavigationItem type={menuItem.type}>
+            <NavigationItem type={menuItem.type} key={menuItem.title}>
               <NavigationLink to={menuItem.to} data-testid='navLink' onClick={toggleMenu}>{menuItem.title}</NavigationLink>
             </NavigationItem>
           ))}

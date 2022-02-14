@@ -23,6 +23,7 @@ describe('Menu component tests as an non-authorized user or authorized customer'
   it('should not render an administration links', () => {
     expect(screen.queryByText('Administration')).not.toBeInTheDocument();
   });
+  
   it('should call the handler function by clicking on a menu element', () => {
     const menuLink = screen.getAllByTestId('navLink')[0];
     fireEvent.click(menuLink);

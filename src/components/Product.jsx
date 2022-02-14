@@ -71,7 +71,7 @@ const Product = ({ productData }) => {
   return (
     <Container>
       <Circle />
-      <Image src={productData.img} />
+      <Image src={productData.img} data-testid='productImg' />
       <Info>
         <Icon>
           <Link to={`/product/${productData._id}`}>

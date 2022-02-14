@@ -62,7 +62,9 @@ const ProductList = () => {
 
   useEffect(() => {
     setFilters({});
-  }, [category])
+  }, [category]);
+
+  console.log(category, filters, sort)
 
   return (
     <Layout>
