@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { ShoppingCartOutlined } from '@mui/icons-material';
 import CloseIcon from '@mui/icons-material/Close';
@@ -8,7 +8,6 @@ import { mobile } from '../responsive';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Menu from './Menu';
-import LogoutButton from './LogoutButton';
 
 
 const Container = styled.div`
@@ -87,7 +86,6 @@ const Close = styled.div`
 
 const Navbar = () => {
   const quantity = useSelector(state => state.cart.quantity);
-  const currentUser = useSelector(state => state.user.currentUser);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -113,13 +111,9 @@ const Navbar = () => {
           <NavbarLink to='/register'>
             <MenuItem>REGISTER</MenuItem>
           </NavbarLink>
-          {currentUser ? (
-            <LogoutButton />
-          ) : (
-            <NavbarLink to='/login'>
-              <MenuItem>SIGN IN</MenuItem>
-            </NavbarLink>
-          )}
+          <NavbarLink to='/login'>
+            <MenuItem>SIGN IN</MenuItem>
+          </NavbarLink>
           <NavbarLink to={'/cart'}>
             <MenuItem>
               <Badge badgeContent={quantity} color='primary'>
