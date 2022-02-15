@@ -1,8 +1,7 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import DashboardInfo from '../DasboardInfo';
 import MockAdapter from 'axios-mock-adapter';
-import axios from 'axios';
 import { userRequest } from '../../../requestMethods';
 import { act } from "react-dom/test-utils";
 
