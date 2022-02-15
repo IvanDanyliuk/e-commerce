@@ -8,9 +8,8 @@ const InfoContainer = styled.div``;
 const Title = styled.h6`
   font-size: 14px;
 `;
-const InfoItem = styled.span`
 
-`;
+const InfoItem = styled.span``;
 
 const Arrow = styled.span`
   color: ${props => props.trend === 'negative' ? 'red' : 'green'};
@@ -24,7 +23,6 @@ const DasboardInfo = () => {
     const getIncome = async () => {
       try {
         const res = await userRequest.get('orders/income');
-        console.log(res)
         setIncome(res.data);
         setPercentage((res.data[1].total * 100) / res.data[0].total - 100);
       } catch (error) {
@@ -33,8 +31,6 @@ const DasboardInfo = () => {
     };
     getIncome();
   }, []);
-
-  console.log(income)
 
   return (
     <InfoContainer>
