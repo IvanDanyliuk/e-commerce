@@ -33,6 +33,7 @@ const WidgetLarge = () => {
       try {
         const res = await userRequest.get('orders');
         setOrders(res.data);
+        console.log(res)
       } catch (error) {
         console.log(error)
       }
@@ -51,7 +52,7 @@ const WidgetLarge = () => {
           <HeadingCell>Status</HeadingCell>
         </Row>
         {orders.map(order => (
-          <Row key={order._id}>
+          <Row key={order._id} data-testid='rowItem'>
             <Cell>{order.userId}</Cell>
             <Cell>{format(order.createdAt)}</Cell>
             <Cell>${order.amount}</Cell>
