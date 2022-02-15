@@ -28,6 +28,27 @@ const ordersMock = [
     createdAt: '2022-02-15',
     createdAt: '2022-02-15',
   },
+  {
+    _id: 'order_2',
+    address: 'Ukraine',
+    amount: 100,
+    products: [
+      {
+        _id: 'product_1',
+        productId: 'product_1',
+        quantity: 2,
+      },
+      {
+        _id: 'product_2',
+        productId: 'product_2',
+        quantity: 1,
+      },
+    ],
+    status: 'pending',
+    userId: 'user_2',
+    createdAt: '2022-02-15',
+    createdAt: '2022-02-15',
+  },
 ];
 
 describe('WidgetLarge component tests', () => {

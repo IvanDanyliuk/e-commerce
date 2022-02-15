@@ -51,7 +51,7 @@ const WidgetSmall = () => {
       <Title>New Members</Title>
       <UserList>
         {users.map(user => (
-          <UserItem>
+          <UserItem data-testid='userItem'>
             <Avatar src={user.img || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXlbMgzYw0M94bT-Sp1UGBBHLj60mz3wVtWQ&usqp=CAU'} alt='avatar' />
             <UserName>
               {user.username}
