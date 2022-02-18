@@ -135,9 +135,10 @@ const Product = () => {
     const getProduct = async () => {
       try {
         const res = await publicRequest.get(`/products/find/${id}`);
+        console.log(res)
         setProduct(res.data)
       } catch (error) {
-        
+        console.log(error);
       }
     };
     getProduct();
@@ -154,6 +155,7 @@ const Product = () => {
   const handleAddToCartClick = () => {
     dispatch(addProduct({ ...product, quantity, color, size }));
   }
+  console.log(location.pathname)
 
   return (
     <Layout>
@@ -177,7 +179,7 @@ const Product = () => {
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize onChange={(e) => setSize(e.target.value)}>
+              <FilterSize onChange={(e) => setSize(e.target.value)} data-testid='selectSize'>
                 {product.size?.map(sizeItem => (
                   <FilterSizeOption key={sizeItem}>{sizeItem}</FilterSizeOption>
                 ))}
@@ -187,10 +189,10 @@ const Product = () => {
           <AddContainer>
             <AmountContainer>
               <Remove onClick={() => handleQuantity('dec')} />
-              <Amount>{quantity}</Amount>
+              <Amount data-testid='quantityValue'>{quantity}</Amount>
               <Add onClick={() => handleQuantity('inc')} />
             </AmountContainer>
-            <Button onClick={handleAddToCartClick}>ADD TO CART</Button>
+            <Button onClick={handleAddToCartClick} data-testid='addToCartButton'>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
