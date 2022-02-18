@@ -1,4 +1,4 @@
-import { render, rerender, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';

@@ -178,8 +178,8 @@ const Cart = () => {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         });
+        console.log(res)
         navigate('/success', { data: res.data });
-        alert('Yo!')
       } catch (error) {
         console.log(error);
       }
@@ -253,8 +253,9 @@ const Cart = () => {
               amount={cart.total * 100}
               token={onToken}
               stripeKey={KEY}
+              
             >
-              <Button>CHECKOUT NOW</Button>
+              <Button data-testid='checkoutButton'>CHECKOUT NOW</Button>
             </StripeCheckout>
           </Summary>
         </Bottom>

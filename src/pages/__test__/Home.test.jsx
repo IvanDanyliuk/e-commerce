@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import '@testing-library/jest-dom';
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router";
 import { store } from '../../redux/store';
@@ -15,7 +16,6 @@ describe('Home page tests', () => {
     );
   });
   it('should render the Navbar', () => {
-    screen.debug();
-    expect()
+    expect(screen.getAllByText('ESTORE.')[0]).toBeInTheDocument();
   });
 });

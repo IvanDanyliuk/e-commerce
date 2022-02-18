@@ -83,10 +83,25 @@ const Login = () => {
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form>
-          <Input placeholder='user name' onChange={(e) => setUsername(e.target.value)} />
-          <Input placeholder='password' type='password' onChange={(e) => setPassword(e.target.value)} />
-          <Button onClick={handleLoginClick} disabled={isFetching}>LOGIN</Button>
-          {error && <Error>Something went wrong...</Error>}
+          <Input 
+            placeholder='user name' 
+            onChange={(e) => setUsername(e.target.value)} 
+            data-testid='username' 
+          />
+          <Input 
+            placeholder='password' 
+            type='password' 
+            onChange={(e) => setPassword(e.target.value)} 
+            data-testid='password' 
+          />
+          <Button 
+            onClick={handleLoginClick} 
+            disabled={isFetching} 
+            data-testid='loginButton'
+          >
+            LOGIN
+          </Button>
+          {error && <Error data-testid='errorMessage'>Something went wrong...</Error>}
           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
           <Link>CREATE A NEW ACCOUNT</Link>
         </Form>
