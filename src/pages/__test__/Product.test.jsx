@@ -1,13 +1,15 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
-import Product from "../Product";
+import { act } from "react-dom/test-utils";
+import MockAdapter from "axios-mock-adapter";
 import { MemoryRouter } from "react-router";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
 import { publicRequest } from "../../requestMethods";
-import MockAdapter from "axios-mock-adapter";
-import { act } from "react-dom/test-utils";
+import Product from "../Product";
+
+
 
 const storeDataMock = {
   _id: '1',

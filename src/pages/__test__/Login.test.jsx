@@ -1,9 +1,9 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { createSlice, configureStore, combineReducers } from '@reduxjs/toolkit';
-import { Provider } from "react-redux";
-import { store } from "../../redux/store";
-import { MemoryRouter } from "react-router";
+import { Provider } from 'react-redux';
+import { store } from '../../redux/store';
+import { MemoryRouter } from 'react-router';
 import Login from '../Login';
 
 const currentUserMockDataSuccess = {
